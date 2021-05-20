@@ -37,7 +37,7 @@ public class Controller {
 			return ResponseEntity.created(uri).body(savedUser);
 		} catch (DataIntegrityViolationException ex) {
 			if (ex.getMessage().contains("ConstraintViolationException"))
-				throw new UserNameAlreadyExistsException("The given username already exists.");
+				throw new UserNameAlreadyExistsException("The username '" + user.getName() + "' already exists.");
 			throw ex;
 		}
 	}
@@ -50,7 +50,7 @@ public class Controller {
 		
 		if (userOptional.isPresent())
 			return userOptional.get();
-		throw new UserNotFoundException("No user with the given id has been found.");
+		throw new UserNotFoundException("No user with the id " + id + " has been found.");
 	}
 	
 	@DeleteMapping(path = "/users/{id}")
@@ -60,7 +60,7 @@ public class Controller {
 		Optional<User> userOptional = userRep.findById(id);
 		
 		if (userOptional.isEmpty())
-			throw new UserNotFoundException("No user with the given id has been found.");
+			throw new UserNotFoundException("No user with the id " + id + " has been found.");
 		userRep.delete(userOptional.get());
 	}
 	
@@ -80,7 +80,7 @@ public class Controller {
 		Optional<User> optionalUser = userRep.findById(id);
 		
 		if (optionalUser.isEmpty())
-			throw new UserNotFoundException("No user with the given id has been found.");
+			throw new UserNotFoundException("No user with the id " + id + " has been found.");
 		post.setUser(optionalUser.get());
 		Post savedPost = postRep.save(post);
 		
@@ -97,6 +97,6 @@ public class Controller {
 		
 		if (postOptional.isPresent())
 			return postOptional.get();
-		throw new PostNotFoundException("No post with the given id has been found.");
+		throw new PostNotFoundException("No post with the id " + id + " has been found.");
 	}
 }
