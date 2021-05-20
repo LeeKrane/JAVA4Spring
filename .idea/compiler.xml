@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="WorkingHours" />
+        <module name="Labor14Num2" />
+        <module name="Labor14Num1" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Labor14Num1" target="11" />
+      <module name="Labor14Num2" target="11" />
+      <module name="WorkingHours" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Labor14Num1" options="-parameters" />
+      <module name="Labor14Num2" options="-parameters" />
+      <module name="WorkingHours" options="-parameters" />
+    </option>
+  </component>
+</project>
