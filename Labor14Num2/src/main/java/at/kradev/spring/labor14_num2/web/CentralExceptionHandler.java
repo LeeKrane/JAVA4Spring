@@ -42,6 +42,12 @@ public class CentralExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
 	}
 	
+	@ExceptionHandler(UserHasNoPostsException.class)
+	public ResponseEntity<String> handleUserHasNoPostsExceptions (UserHasNoPostsException ex, WebRequest req) {
+		System.out.println(ex.getMessage());
+		return new ResponseEntity<>(ex.getMessage(), HttpStatus.NO_CONTENT);
+	}
+	
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid (MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 		return new ResponseEntity<>("Validation failed: " + ex.getMessage(), HttpStatus.BAD_REQUEST);

@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/Labor14Num1/Labor14Num1.iml" filepath="$PROJECT_DIR$/Labor14Num1/Labor14Num1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Labor14Num2/Labor14Num2.iml" filepath="$PROJECT_DIR$/Labor14Num2/Labor14Num2.iml" />
       <module fileurl="file://$PROJECT_DIR$/WorkingHours/WorkingHours.iml" filepath="$PROJECT_DIR$/WorkingHours/WorkingHours.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labor14Num1/labor14_num1.iml" filepath="$PROJECT_DIR$/Labor14Num1/labor14_num1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Labor14Num2/labor14_num2.iml" filepath="$PROJECT_DIR$/Labor14Num2/labor14_num2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WorkingHours/working_hours.iml" filepath="$PROJECT_DIR$/WorkingHours/working_hours.iml" />
     </modules>
   </component>
 </project>
