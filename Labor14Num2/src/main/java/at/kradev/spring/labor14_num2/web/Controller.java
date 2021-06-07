@@ -32,7 +32,7 @@ public class Controller {
 		try {
 			User savedUser = userRep.save(user);
 		
-			String path = "/users";
+			String path = "/users/{id}";
 			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().replacePath(path).build(savedUser.getId());
 			return ResponseEntity.created(uri).body(savedUser);
 		} catch (DataIntegrityViolationException ex) {
