@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -26,10 +27,12 @@ public class User implements Serializable {
 	private Integer id;
 	
 	@Size(min = 3)
+	@NotNull
 	@Column(name = "u_name", unique = true)
 	private String name;
 	
 	@PastOrPresent
+	@NotNull
 	@Column(name = "u_birthday")
 	private LocalDate birthday;
 	

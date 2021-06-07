@@ -90,8 +90,8 @@ public class Controller {
 		post.setUser(optionalUser.get());
 		Post savedPost = postRep.save(post);
 		
-		String path = "/users/{id}/posts";
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().replacePath(path).build(savedPost.getId());
+		String path = "/posts/{id}";
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().replacePath(path).build(optionalUser.get().getId());
 		return ResponseEntity.created(uri).body(savedPost);
 	}
 	
