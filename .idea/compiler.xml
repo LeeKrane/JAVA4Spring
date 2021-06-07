@@ -8,13 +8,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="WorkingHours" />
+        <module name="labor14_num1" />
         <module name="Labor14Num2" />
+        <module name="labor14_num2" />
         <module name="Labor14Num1" />
+        <module name="working_hours" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="labor14_num1" target="11" />
+      <module name="labor14_num2" target="11" />
       <module name="Labor14Num1" target="11" />
       <module name="Labor14Num2" target="11" />
+      <module name="working_hours" target="11" />
       <module name="WorkingHours" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -23,6 +29,9 @@
       <module name="Labor14Num1" options="-parameters" />
       <module name="Labor14Num2" options="-parameters" />
       <module name="WorkingHours" options="-parameters" />
+      <module name="labor14_num1" options="-parameters" />
+      <module name="labor14_num2" options="-parameters" />
+      <module name="working_hours" options="-parameters" />
     </option>
   </component>
 </project>

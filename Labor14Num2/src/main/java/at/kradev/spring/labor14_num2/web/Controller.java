@@ -36,7 +36,7 @@ public class Controller {
 			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().replacePath(path).build(savedUser.getId());
 			return ResponseEntity.created(uri).body(savedUser);
 		} catch (DataIntegrityViolationException ex) {
-			if (ex.getMessage().contains("ConstraintViolationException"))
+			if (ex.getMessage() != null && ex.getMessage().contains("ConstraintViolationException"))
 				throw new UserNameAlreadyExistsException("The username '" + user.getName() + "' already exists.");
 			throw ex;
 		}
@@ -68,7 +68,13 @@ public class Controller {
 	public List<Post> getPostsByUserId (@PathVariable Integer id) {
 		if (id == null)
 			throw new IdIsNullException("The user id must not be null.");
-		return postRep.findPostsByUserId(id);
+		if (userRep.findById(id).isEmpty())
+			throw new UserNotFoundException("No user with the id " + id + " has been found.");
+		
+		List<Post> posts = postRep.findPostsByUserId(id);
+		if (posts.isEmpty())
+			throw new UserHasNoPostsException();
+		return posts;
 	}
 	
 	@PostMapping(path = "/users/{id}/posts")
